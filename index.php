@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="CSS/hub.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>임금계산을 자동으로 | 오토페이</title>
 </head>
 <body>
-asdsadasdasdas
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__btn">
+        <a class="nav__link" href="">
+          마이페이지
+        </a>
+      </li>
+      <li class="nav__btn" >
+        <a class="nav__link" href="">
+          마이페이지
+        </a>
+      </li>
+      <li class="nav__btn">
+        <a class="nav__link" href="">
+          마이페이지
+        </a>
+      </li>
+      <li class="nav__btn">
+        <a class="nav__link" href="">
+          마이페이지
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class = "main_image">
+    
+  </div>
 <?php
   
   include "lib.php";
