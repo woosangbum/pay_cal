@@ -4,12 +4,12 @@
 @import "screens/index.css";
 @import "screens/login.css";
 @import "screens/join.css";
+@import "screens/join_manager.css";
 @import "screens/realpage.css";
 
 /* component */
 @import "component/navbar.css";
-
-footer {
+ssd footer {
   background-color: var(--text-color);
   margin-top: 50px;
   width: 100%;
