@@ -60,7 +60,7 @@
     //사장님이 로그인 했을 때?>
     <ul class="navbar-login__linkList">
       <li><a href="index.php">Home</a></li>
-      <li><a href="realpage.php">My Pages</a></li>
+      <li><a href="realpage_managers.php">My Pages</a></li>
       <li><a href="#">FAQ</a></li>
     </ul>
 

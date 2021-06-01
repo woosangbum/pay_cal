@@ -89,7 +89,7 @@
       <form class="form-area__input" action="loginproc.php" method="post">
         <label for="form-area__input__login"
           >User ID
-          <input class="form-area__input__text" type="text" name="uid" autofocus required/>
+          <input class="form-area__input__text" type="text" name="uid" />
         </label>
 
         <label for="form-area__input__login"
@@ -121,5 +121,5 @@
       </li>
     </ul>
   </footer>
-</body>
+  </body>
 </html>
