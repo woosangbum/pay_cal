@@ -1,0 +1,55 @@
+.header-main {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.contents-main {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 50px 30px;
+  background-color: #505050;
+  flex-direction: column;
+  height: 550px;
+  justify-content: center;
+}
+
+.contents-main__logo {
+  color: var(--accent-color);
+  padding: 12px 16px;
+}
+
+.contents-main__welcome {
+  font-style: italic;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.contents-main__ads-korean {
+  padding-top: 50px;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.contents-main__ads-english {
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.navbar-login__main {
+  font-family: "Source Sans Pro", sans-serif;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.navbar-login__main li a {
+  padding: 8px 12px;
+  color: var(--background-color);
+  font-weight: 100;
+}

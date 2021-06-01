@@ -74,50 +74,38 @@
     </ul>
      <?php }?> 
 </nav>
+<div class = "input__join">
+    <header class="welcome-header">
+        <h1 class="welcome-header__title">Welcome to Auto Pay</h1>
+        <p class="welcome-header__text">Create your account</p>
+    </header>
 
-<header class="header-main">
-  A new paradigm in wage calculation.
-</header>
-    <!-- contents is here -->
-<div class="contents-main">
-  <div class="contents-main__logo">
-    <i class="fab fa-paypal fa-10x"></i>
-  </div>
-  <div class="contents-main__welcome">Calculate wages</div>
-  <div class="contents-main__ads-korean">
-    임금계산의 새로운 패러다임. 지금시작해보세요
-  </div>
-  <div class="contents-main__ads-english">
-    A new paradigm in wage calculation. You can start now.
-  </div>
+    <form class = "form_area" action="joinProc_manager.php" method="post" onsubmit="return chkFrm();">
+        <p><label for = "name"> 가게 이름 <br>
+            <input type="text" class = "input__box" autocapitalize = "off" autocomplete="off" id = "real_name" name = "name" autofocus required></label>
+        </p>
+
+        <p><label for = "uid"> 아이디 <br>
+            <input type="text" class = "input__box" autocapitalize = "off" autocomplete="off" id = "uid" name = "uid" required ></label>
+        </p>
+
+
+        <p><label for = "pwd"> 비밀번호 <br>
+            <input type="password" class = "input__box" autocapitalize = "off" autocomplete="off" id = "pwd" name = "pwd" required></label>
+        </p>
+
+        <p><label for = "phone_number"> 전화번호 <br>
+            <input type="tel" class = "input__box" autocapitalize = "off" autocomplete="off" id = "phone_number" name = "phone_number" ></label>
+        </p>
+
+        <p><label for = "address"> 주소 <br>
+            <input type="text" class = "input__box" autocapitalize = "off" autocomplete="off" id = "address" name = "address" ></label>
+        </p>
+
+
+
+        <input class = "submit_btn" type="submit" value="회원가입">
+    </form>
 </div>
-
-<main>
-<?php
-  if(!$isLogin and !$isLoginManagers ){ ?>
-  <ul class="navbar-login__main">
-    <li><a href="login.php">Login</a></li>
-    <li id="join__main"><a href="join.php">Join</a></li>
-    <li id="join__main"><a href="join_manager.php">사장님이신가요?</a></li>
-  </ul>
-<?php }?>
-</main>
-
-<footer>
-  <ul class="navbar-login__sns">
-    <li>
-      <i class="fab fa-instagram fa-1g"></i>
-      <a href="https://www.instagram.com/">Instagram</a>
-    </li>
-    <li>
-      <i class="fab fa-twitter fa-1g"></i>
-      <a href="https://twitter.com/?lang=ko">twitter</a>
-    </li>
-    <li>
-    <i class="far fa-envelope-open"></i>
-      woosb24@gmial.com
-    </li>
-  </ul>
-</footer>
 </body>
 </html>

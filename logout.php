@@ -1,9 +1,8 @@
 <?php
     session_start();
-    include "lib.php";
+    include "library/lib.php";
  
-    $_SESSION['isLogin'] = "";
-
-    echo "로그아웃 되었습니다.";
-
+    unset($_SESSION['isLogin']);
+    unset($_SESSION['isLoginManagers']);
+    Header("Location: index.php");
 ?>

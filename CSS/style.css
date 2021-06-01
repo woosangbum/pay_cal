@@ -1,0 +1,21 @@
+/* variables */
+@import "variables.css";
+/* screens */
+@import "screens/index.css";
+@import "screens/login.css";
+@import "screens/join.css";
+@import "screens/realpage.css";
+
+/* component */
+@import "component/navbar.css";
+
+footer {
+  background-color: var(--text-color);
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+body {
+  background-color: var(--text-colors);
+}

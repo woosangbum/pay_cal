@@ -1,27 +1,43 @@
 <?php
     session_start();
-    include "lib.php";
+    include "library/lib.php";
 
-    $email = $_POST["email"];
+    $uid = $_POST["uid"];
     $pwd = $_POST["password"];
-
-    $email = mysqli_real_escape_string($connect, $email);
+    $uid = mysqli_real_escape_string($connect, $uid);
     $pwd = mysqli_real_escape_string($connect, $pwd);
     
-    $query = "select * from members where email = '$email' and pwd = password('$pwd')";
+    $query = "select * from members where uid = '$uid' and pwd = password('$pwd')";
+    $query_managers = "select * from managers where uid = '$uid' and pwd = password('$pwd')";
+    
     $result = mysqli_query($connect, $query);
+    $result_managers = mysqli_query($connect, $query_managers);
+    
     $data = mysqli_fetch_array($result);
+    $data_managers = mysqli_fetch_array($result_managers);
+   
 
     if($data){
-        $_SESSION["isLogin"] = time();
-        echo $_SESSION["isLogin"];
-        var_dump($_SESSION);
+        $_SESSION["isLogin"] = $uid;
 ?>
     <script>
         location.href="realpage.php";
     </script>
 <?php
-    }else{
-        echo "로그인 정보가 올바르지 않습니다.";
+    }elseif($data_managers){
+        $_SESSION["isLoginManagers"] = $uid;
+?>
+    <script>
+        location.href="realpage_managers.php";
+    </script>
+<?php
+    }
+    else{
+?>
+    <script>
+        alert("로그인 정보가 올바르지 않습니다. ");    
+        location.href="login.php";
+    </script>
+<?php
     }
 ?>
