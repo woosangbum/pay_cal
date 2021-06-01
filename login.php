@@ -20,7 +20,6 @@
 </head>
 <body>
 <?php include "library/nav_out.php"; ?>
-
   <main class="main-login">
     <div class="loginPage-logo">
       <i class="fab fa-paypal"></i>
@@ -56,17 +55,6 @@
       </form>
     </div>
   </main>
-  <footer>
-    <ul class="navbar-login__sns">
-      <li>
-        <i class="fab fa-instagram fa-1g"></i>
-        <a href="https://www.instagram.com/">Instagram</a>
-      </li>
-      <li>
-        <i class="fab fa-twitter fa-1g"></i>
-        <a href="https://twitter.com/?lang=ko">twitter</a>
-      </li>
-    </ul>
-  </footer>
+  <?php include "library/footer.php"; ?>
   </body>
 </html>

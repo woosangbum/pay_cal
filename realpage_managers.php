@@ -111,5 +111,6 @@
         echo "임금 합계 :".$pay_total;
         ?>
 </table>
+<?php include "library/footer.php"; ?>
 </body>
 </html>

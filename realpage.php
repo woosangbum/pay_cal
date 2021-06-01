@@ -38,28 +38,17 @@
 
 <?php include "library/nav.php"; ?>
 <div class = "proc_area">
-    <form action="timeProc.php" method="post">
+    <foprm action="timeProc.hp" method="post">
         <input name = "date" type="date" placeholder="날짜">
         <select name="time_select" id="time_select">
             <option value="" selected>시간을 선택해 주세요</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
+            <?php 
+              for($i=1; $i<=15; $i++)
+                echo '<option value="'.$i.'">'.$i.'</option> ';
+            ?>
         </select>
         <input type="submit" value = "저장">
-    </form>
+    </foprm>
     <table border = 1>
         <tr>
             <td>아이디</td>
@@ -96,5 +85,6 @@
         ?>
     </table>
 </div>
+  <?php include "library/footer.php"; ?>
 </body>
 </html>
