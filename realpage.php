@@ -44,7 +44,23 @@
     </div>
       <header class="proc_area__area__welcome">
 <?php
+$query = "select work_place from members where uid = ?";
+$list = $db -> query($query, $isLogin)-> fetchAll();
+foreach($list as $data){
+    $work_place = $data['work_place'];
+}
+
+$query = "select pay_by_time from members where uid = ?";
+$list = $db -> query($query, $isLogin)-> fetchAll();
+foreach($list as $data){
+    $pay_by_time = $data['pay_by_time'];
+}
+
           echo '<h1 class="proc_area__welcome__title">'.$isLogin.' 님의 임금 내역이예요</h1>';
+          echo "<div class = proc_area__welcome_userinform>";
+          echo '<h4>근무지 :'.$work_place.'</h4>';
+          echo '<h4>시급 :'.$pay_by_time.'</h4>';
+          echo "</div>"
 ?>
       </header>
     <form class = "proc_area__form" action="timeProc.php" method="post">

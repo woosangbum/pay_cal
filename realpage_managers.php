@@ -38,7 +38,17 @@
     </div>
       <header class="proc_area__area_m__welcome">
 <?php
+          
+  $query = "select name from managers where uid = ?";
+  $list = $db -> query($query, $isLoginManagers)-> fetchAll();
+  foreach($list as $data){
+    $work_name = $data['name'];
+  }
+
           echo '<h1 class="proc_area_m__welcome__title">'.$isLoginManagers.' 님의 인건비 기록이예요</h1>';
+          echo "<div class = proc_area__welcome_userinform>";
+          echo '<h4>나의 가게 :'.$work_name.'</h4>';
+          echo "</div>"
 ?>
       </header>
 <form action="payProc.php" class = "proc_area_m_form" method="post">
@@ -90,7 +100,6 @@
 </form>
 <div class= "proc_area_m_log">
 <table>
-<caption>인건비 기록</caption>
         <tr>
             <td>이름</td>
             <td>날짜</td>

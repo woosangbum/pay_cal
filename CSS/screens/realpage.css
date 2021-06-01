@@ -10,6 +10,15 @@
   margin: 20px 10;
 }
 
+.proc_area__welcome_userinform {
+  display: flex;
+  justify-content: center;
+}
+
+.proc_area__welcome_userinform h4 {
+  padding: 10px;
+}
+
 .proc_area {
   display: flex;
   flex-direction: column;
