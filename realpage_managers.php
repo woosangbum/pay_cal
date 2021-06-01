@@ -32,16 +32,16 @@
     
 <?php include "library/nav.php"; ?>
 
-<form action="payProc.php" class = "proc_area" method="post">
-    <table border = 1>
-        <tr>
-            <td>아이디</td>
-            <td>날짜</td>
-            <td>시간</td>
-            <td>등록시간</td>
-            <td>임금</td>
-            <td>승인</td>
-        </tr>
+<div class = "proc_area_m">
+    <div class="proc_area_m__logo">
+      <i class="fab fa-paypal"></i>
+    </div>
+      <header class="proc_area__area_m__welcome">
+<?php
+          echo '<h1 class="proc_area_m__welcome__title">'.$isLoginManagers.' 님의 인건비 기록이예요</h1>';
+?>
+      </header>
+<form action="payProc.php" class = "proc_area_m_form" method="post">
         <?php
         
         //나의 가게 직원들의 정보보기
@@ -54,10 +54,24 @@
         
         $query = "select * from member_time where work_place = ? and permit = '대기'";
         $list = $db -> query($query, $place)-> fetchAll();
-        foreach($list as $data){
+        if(!count($list)){echo "<div>요청된 임금 목록이 없습니다</div>";
+      }else{
+?>
+      <table>
+      <caption>임금 요청</caption>
+        <tr>
+            <td>이름</td>
+            <td>날짜</td>
+            <td>시간</td>
+            <td>등록시간</td>
+            <td>임금</td>
+            <td>승인</td>
+        </tr>
+<?php
+          foreach($list as $data){
         ?>
         <tr>
-            <td> <?=$data['uid']?></td>
+            <td> <?=$data['real_name']?></td>
             <td> <?=$data['date']?></td>
             <td> <?=$data['time']?></td>
             <td> <?=$data['regdate']?></td>
@@ -65,16 +79,20 @@
             <td> 
               <input type="checkbox" name = "permit[]" value = "<?=$data['idx']?>">
             </td>
-        
+            </table>
+    <input type="submit" value = "승인">
         <?php
         }
+        
+      }
         ?>
-    </table>
-    <input type="submit" value = "승인">
+    
 </form>
-<table border = 1>
+<div class= "proc_area_m_log">
+<table>
+<caption>인건비 기록</caption>
         <tr>
-            <td>아이디</td>
+            <td>이름</td>
             <td>날짜</td>
             <td>시간</td>
             <td>등록시간</td>
@@ -97,20 +115,24 @@
         foreach($list as $data){
           if ($data['permit'] == '승인'){
             $pay_total += $data['pay'];
-        }
         ?>
         <tr>
-            <td> <?=$data['uid']?></td>
+            <td> <?=$data['real_name']?></td>
             <td> <?=$data['date']?></td>
             <td> <?=$data['time']?></td>
             <td> <?=$data['regdate']?></td>
             <td> <?=$data['pay']?></td>
-        
+          
         <?php
+          }
         }
-        echo "임금 합계 :".$pay_total;
+        echo '<div class = "proc_area_m__inform">
+      <p class = "proc_area_m__inform-log">인건비 총합: '.$pay_total.'</p>
+  </div>';
         ?>
 </table>
+</div>
+      </div>
 <?php include "library/footer.php"; ?>
 </body>
 </html>

@@ -1,16 +1,16 @@
-.proc_area__logo {
+.proc_area_m__logo {
   color: var(--sub-color);
   font-size: 50px;
   padding: 10px;
   margin: 40px 0px 20px 0px;
 }
 
-.proc_area__welcome__title {
+.proc_area_m__welcome__title {
   text-align: center;
   margin: 20px 10;
 }
 
-.proc_area {
+.proc_area_m {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,38 +20,20 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.proc_area__form {
+.proc_area_m__form {
   padding: 10px;
   border: 1px solid black;
   border-radius: 4px;
 }
 
-.proc_area__inform {
+.proc_area_m__inform {
   display: flex;
   border: 1px solid black;
   border-radius: 4px;
   margin: 20px;
 }
 
-.proc_area__inform-request,
-.proc_area__inform-permit {
+.proc_area_m__inform-log {
   padding: 8px 10px;
   margin: 0;
-}
-
-#date_select,
-#time_select {
-  padding: 10px;
-  height: 44px;
-  box-sizing: border-box;
-}
-
-#request {
-  padding: 10px;
-  height: 44px;
-  box-sizing: border-box;
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: 4px;
-  color: var(--text-color);
 }

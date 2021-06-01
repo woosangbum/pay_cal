@@ -10,7 +10,7 @@
 
     $isLogin = $_SESSION["isLogin"];
     
-    $data[] = $_SESSION['isLogin'];
+    $data[] = $isLogin;
     $data[] = $_POST['date'];
     $data[] = $_POST['time_select'];
     $data[] = date("Y-m-d H:i:s");
@@ -28,7 +28,13 @@
         } // $pay에 시급을 저장
     
     $data[] = $data[2]*$pay;
-    $query = "insert into member_time(uid, date, time, regdate, work_place,pay) values(?,?,?,?,?,?)";
+
+    $query = "select real_name from members where uid = ?";
+    $list = $db -> query($query, $isLogin)-> fetchAll();
+    foreach($list as $name){
+        $data[] = $name['real_name'];
+    }
+    $query = "insert into member_time(uid, date, time, regdate, work_place,pay, real_name) values(?,?,?,?,?,?,?)";
     $db->query($query, $data);
 
     header("Location: realpage.php");

@@ -6,10 +6,12 @@
 @import "screens/join.css";
 @import "screens/join_manager.css";
 @import "screens/realpage.css";
+@import "screens/realpage-m.css";
 
 /* component */
 @import "component/navbar.css";
-ssd footer {
+
+footer {
   background-color: var(--text-color);
   margin-top: 50px;
   width: 100%;
@@ -18,4 +20,18 @@ ssd footer {
 
 body {
   background-color: var(--text-colors);
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+tr {
+  border-bottom: solid 1px black;
+}
+
+td,
+th {
+  padding: 5px;
 }
