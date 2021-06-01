@@ -72,3 +72,9 @@ label {
   border-radius: 2px;
   color: var(--text-color);
 }
+@media screen and (max-width: 640px) {
+  .form-area {
+    width: 80%;
+    height: 400px;
+  }
+}

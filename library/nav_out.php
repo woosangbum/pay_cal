@@ -15,19 +15,22 @@
     }  
 ?>
    <!-- navbar is here -->
-  <nav class="navbar-login">
-    <div class="navbar-login__logo">
+  <nav class="navbar">
+    <div class="navbar__logo">
         <i class="fab fa-paypal"></i>
         <a href="index.php">Auto Pay</a>
       </div>
-      <ul class="navbar-login__linkList">
+      <ul class="navbar__linkList">
         <li><a href="index.php">Home</a></li>
         <li><a href="realpage.php">My Wages</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
 
-      <ul class="navbar-login__members">
+      <ul class="navbar__members">
         <li><a href="login.php">Login</a></li>
         <li id="join"><a href="join.php">Join</a></li>
       </ul>
+      <a href="#" class = "navbar__toogleBtn">
+        <i class="fas fa-bars"></i>
+     </a>
   </nav>

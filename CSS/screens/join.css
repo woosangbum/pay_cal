@@ -89,3 +89,9 @@ label {
   border-radius: 2px;
   color: var(--text-color);
 }
+
+@media screen and (max-width: 640px) {
+  .main-join__area {
+    width: 80%;
+  }
+}

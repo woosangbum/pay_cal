@@ -111,5 +111,6 @@ foreach($list as $data){
     </table>
   </div>
   <?php include "library/footer.php"; ?>
+  <script src="src/nav.js"></script>
 </body>
 </html>

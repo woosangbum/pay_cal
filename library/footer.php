@@ -1,5 +1,5 @@
 <footer>
-  <ul class="navbar-login__sns">
+  <ul class="navbar__sns">
     <li>
       <i class="fab fa-instagram fa-1g"></i>
       <a href="https://www.instagram.com/">Instagram</a>
