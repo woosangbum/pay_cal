@@ -1,4 +1,4 @@
-.header-main {
+.header_index {
   font-family: "Source Sans Pro", sans-serif;
   padding: 20px;
   display: flex;
@@ -6,7 +6,7 @@
   font-size: 20px;
 }
 
-.contents-main {
+.contents_index {
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   align-items: center;
@@ -17,30 +17,30 @@
   justify-content: center;
 }
 
-.contents-main__logo {
+.contents_index__logo {
   color: var(--accent-color);
   padding: 12px 16px;
 }
 
-.contents-main__welcome {
+.contents_index__welcome {
   font-style: italic;
   font-size: 24px;
   color: var(--text-color);
 }
 
-.contents-main__ads-korean {
+.contents_index__ads_korean {
   padding-top: 50px;
   font-style: italic;
   font-size: 24px;
   color: var(--text-color);
 }
 
-.contents-main__ads-english {
+.contents_index__ads_english {
   font-style: italic;
   color: var(--text-color);
 }
 
-.navbar-login__main {
+.memebers_index {
   font-family: "Source Sans Pro", sans-serif;
   list-style: none;
   display: flex;
@@ -48,8 +48,14 @@
   font-size: 16px;
 }
 
-.navbar-login__main li a {
+.memebers_index li {
   padding: 8px 12px;
+}
+.memebers_index li a {
   color: var(--background-color);
   font-weight: 100;
+}
+
+.contents_index__ads_korean p {
+  margin: 0;
 }

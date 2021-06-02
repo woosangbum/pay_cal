@@ -10,8 +10,6 @@
     href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap"
     rel="stylesheet"
   />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculate wages | Auto Pay</title>
   <script
     src="https://kit.fontawesome.com/faa41a920e.js"
@@ -19,43 +17,48 @@
   ></script>
 </head>
 <body>
-<?php include "library/nav_out.php"; ?>
-  <main class="main-login">
-    <div class="loginPage-logo">
+  <?php
+  include "library/nav_out.php";
+  include "library/nav.php";
+  include "library/lib.php";
+  ?>
+
+  <main class="contents-login">
+    <div class="contents-login__logo">
       <i class="fab fa-paypal"></i>
     </div>
-    <div class="form-area">
-      <header class="form-area__header-welcome">
-        <h1 class="form-area__header-welcome__title">Log in to Auto Pay</h1>
-        <p class="form-area__header-welcome__text">
-          If you have Auto Pay Acoount, log in with your ID and Password.
-        </p>
+    <div class="contents-login__area">
+      <header class="contents-login__area__welcome">
+        <h1>Log in to Auto Pay</h1>
+        <p>If you have Auto Pay Acoount, log in with your ID and Password</p>
       </header>
 
-      <form class="form-area__input" action="loginproc.php" method="post">
-        <label for="form-area__input__login"
+      <form class="contents-login__area__input" action="loginproc.php" method="post">
+        <label for="contents-login__area__input__login"
           >User ID
-          <input class="form-area__input__text" type="text" name="uid" />
+          <input class="contents-login__area__input__text" type="text" name="uid" />
         </label>
 
-        <label for="form-area__input__login"
+        <label for="contents-login__area__input__login"
           >Password
           <input
-            class="form-area__input__text"
+            class="contents-login__area__input__text"
             type="password"
             name="password"
           />
         </label>
 
         <input
-          class="form-area__input__submit"
+          class="contents-login__area__input__submit"
           type="submit"
           value="Log In"
         />
       </form>
     </div>
   </main>
+
   <?php include "library/footer.php"; ?>
+
   <script src="src/nav.js"></script>
-  </body>
+</body>
 </html>

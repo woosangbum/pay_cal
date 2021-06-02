@@ -1,22 +1,22 @@
-.loginPage-logo {
+.contents-login__logo {
   color: var(--sub-color);
   font-size: 50px;
   padding: 10px;
   margin: 40px 0px 20px 0px;
 }
 
-.form-area__header-welcome__title,
-.form-area__header-welcome__text {
+.contents-login__area__welcome h1,
+.contents-login__area__welcome p {
   text-align: center;
   margin: 20px 10px 0px 10px;
 }
 
-.main-login {
+.contents-login {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.form-area {
+.contents-login__area {
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
@@ -28,13 +28,13 @@
   height: 370px;
 }
 
-.form-area__header-welcome {
+.contents-login__area__welcome {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.form-area__input {
+.contents-login__area__input {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,14 +43,16 @@
   box-sizing: border-box;
 }
 
-.form-area__input__text {
+.contents-login__area__input__text {
   box-sizing: border-box;
   padding: 10px;
   width: 100%;
+  background-color: var(--text-color);
+  border-radius: 4px;
 }
 
-.form-area__input__text:focus {
-  border-radius: 2px;
+.contents-login__area__input__text:focus {
+  border-radius: 4px;
   box-shadow: 0 0 0 2px #c2855d;
   outline: none;
   border: 1px solid #d49466;
@@ -62,7 +64,7 @@ label {
   height: 60px;
 }
 
-.form-area__input__submit {
+.contents-login__area__input__submit {
   box-sizing: border-box;
   padding: 10px;
   width: 100%;
@@ -73,7 +75,7 @@ label {
   color: var(--text-color);
 }
 @media screen and (max-width: 640px) {
-  .form-area {
+  .contents-login__area {
     width: 80%;
     height: 400px;
   }

@@ -4,7 +4,7 @@
 
     $connect = mysqli_connect("localhost","root", "", "payment_members");
     if(mysqli_connect_error()){
-        echo "mysql 접속중 오류가 발생했습니다.";
+        echo "conneting mysql, Error";
         echo mysqli_connect_error();
     }
 ?>

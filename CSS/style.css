@@ -1,5 +1,6 @@
 /* variables */
 @import "variables.css";
+
 /* screens */
 @import "screens/index.css";
 @import "screens/login.css";
@@ -10,16 +11,10 @@
 
 /* component */
 @import "component/navbar.css";
-
-footer {
-  background-color: var(--text-color);
-  margin-top: 50px;
-  width: 100%;
-  text-align: center;
-}
+@import "component/footer.css";
 
 body {
-  background-color: var(--text-colors);
+  background-color: var(--text-color);
 }
 
 table {

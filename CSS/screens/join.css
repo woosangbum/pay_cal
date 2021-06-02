@@ -1,26 +1,26 @@
-.join__area__welcome__manager a {
+.contents-join__area__welcome__manager a {
   color: black;
 }
-.main-join__logo {
+.contents-join__logo {
   color: var(--sub-color);
   font-size: 50px;
   padding: 10px;
   margin: 40px 0px 20px 0px;
 }
 
-.join__area__welcome__title,
-.join__area__welcome__text {
+.contents-join__area__welcome h1,
+.contents-join__area__welcome p {
   text-align: center;
   margin: 20px 10px 0px 10px;
 }
 
-.main-join {
+.contents-join {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main-join__area {
+.contents-join__area {
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
@@ -32,13 +32,13 @@
   height: 900px;
 }
 
-.main-join__area__welcome {
+.contents-join__area__welcome {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main-join__area__form {
+.contents-join__area__form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,25 +48,28 @@
   height: 700px;
 }
 
-.main-join__area__form p {
+.contents-join__area__form p {
   width: 100%;
   height: 60px;
 }
 
-.main-join__area__form-text,
-#work_place {
+.contents-join__area__form-text,
+#showWorkPlace {
   box-sizing: border-box;
   padding: 10px;
   width: 100%;
+  background-color: var(--text-color);
+  border-radius: 4px;
 }
 
-#work_place {
-  -webkit-appearance: none; /* 화살표 없애기 for chrome*/
-  -moz-appearance: none; /* 화살표 없애기 for firefox*/
-  border-radius: 2px;
+#showWorkPlace {
+  -webkit-appearance: none; /* for chrome*/
+  -moz-appearance: none; /* for firefox*/
+  border: 2px solid var(--sub-color);
+  border-radius: 4px;
 }
 
-.main-join__area__form-text:focus {
+.contents-join__area__form-text:focus {
   border-radius: 2px;
   box-shadow: 0 0 0 2px #c2855d;
   outline: none;
@@ -79,7 +82,7 @@ label {
   height: 60px;
 }
 
-.main-join__area__form-submit {
+.contents-join__area__form-submit {
   box-sizing: border-box;
   padding: 10px;
   width: 100%;
@@ -91,7 +94,7 @@ label {
 }
 
 @media screen and (max-width: 640px) {
-  .main-join__area {
+  .contents-join__area {
     width: 80%;
   }
 }

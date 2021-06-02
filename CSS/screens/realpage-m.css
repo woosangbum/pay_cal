@@ -39,6 +39,7 @@
   border: 1px solid black;
   border-radius: 4px;
   margin: 20px;
+  justify-content: center;
 }
 
 .proc_area_m__inform-log {
