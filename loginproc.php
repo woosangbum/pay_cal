@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "library/lib.php";
+    $connect = mysqli_connect("localhost","root", "", "payment_members");
 
     $uid = $_POST["uid"];
     $pwd = $_POST["password"];

@@ -2,7 +2,6 @@
     session_start();
     $isLoginManagers = $_SESSION["isLoginManagers"];
     include "library/dbClass.php";
-    include "library/lib.php";
     if(!$isLoginManagers){
         echo "사장님만 접근 가능합니다.";
         exit;

@@ -2,7 +2,6 @@
   session_start();
   $isLoginManagers = $_SESSION["isLoginManagers"];
   include "library/dbClass.php";
-  include "library/lib.php";
   if(!$isLoginManagers){
     echo "사장님만 접근 가능합니다.";
     exit;
@@ -53,16 +52,15 @@
 
     <form action="payProc.php" class = "proc_area_m_form" method="post">
       <?php
-      // show my place's membe's inform
-      $query = "select name from managers where uid = '".$isLoginManagers."'";
-      $result = mysqli_query($connect, $query);
-      while($data = mysqli_fetch_array($result)){
-          $place = $data[0];
-      };
+      //get the my place name from database
+      $query = "select name from managers where uid = ?";
+      $my_place = $db -> query($query, $isLoginManagers)-> fetchAll();
+      $my_place = $my_place[0]["name"];
       
-      // show current permit infrom
+      // show current permit infrom from database
       $query = "select * from member_time where work_place = ? and permit = '대기'";
-      $list = $db -> query($query, $place)-> fetchAll();
+      $list = $db -> query($query, $my_place)-> fetchAll();
+
       if(!count($list)){ 
         echo "<div>요청된 임금 목록이 없습니다</div>";
       }else{
@@ -99,46 +97,73 @@
         ?>
     </form>
 
-    <div class= "proc_area_m_log">
-    <table>
-      <tr>
-          <td>이름</td>
-          <td>날짜</td>
-          <td>시간</td>
-          <td>등록시간</td>
-          <td>임금</td>
-      </tr>
-      <?php
-        // show my palce's member's inform
-        $query = "select permit from member_time where work_place ='".$isLoginManagers."'and permit = '승인'";
-        $result = mysqli_query($connect, $query);
-        while($data = mysqli_fetch_array($result)){
-            $place = $data[0];
-        };
-        
-        $query = "select * from member_time where work_place = ?";
-        $list = $db -> query($query, $place)-> fetchAll();
+    <form action="timeDeleteProc.php" method = "post">
+      <div class= "proc_area_m_log">
+        <table>
+          <tr>
+              <td>이름</td>
+              <td>날짜</td>
+              <td>시간</td>
+              <td>등록시간</td>
+              <td>임금</td>
+              <td>삭제</td>
+          </tr>
+          <?php
+            $query = "select * from member_time where permit = '승인' and work_place = ?";
+            $list = $db -> query($query, $my_place)-> fetchAll();
 
-        $pay_total = 0;
-        foreach($list as $data){
-          if ($data['permit'] == '승인'){
-            $pay_total += $data['pay'];
-      ?>
-        <tr>
-          <td> <?=$data['real_name']?></td>
-          <td> <?=$data['date']?></td>
-          <td> <?=$data['time']?></td>
-          <td> <?=$data['regdate']?></td>
-          <td> <?=$data['pay']?></td>
-          
-        <?php
+            $pay_total = 0;
+
+            // show the 6, recent contents
+            if(count($list) >7)
+              $list = array_slice($list,-6,6);
+            
+            foreach($list as $data){
+              if ($data['permit'] == '승인'){
+                $pay_total += $data['pay'];
+          ?>
+            <tr>
+              <td> <?=$data['real_name']?></td>
+              <td> <?=$data['date']?></td>
+              <td> <?=$data['time']?></td>
+              <td> <?=$data['regdate']?></td>
+              <td> <?=number_format($data['pay'])?></td>
+              <td> 
+                <input type="checkbox" name = "delete[]" value = "<?=$data['idx']?>">
+              </td>
+            <?php
+              }
+            }
+          echo '<div class = "proc_area_m__inform">
+                <p class = "proc_area_m__inform-log">인건비 총합: '.number_format($pay_total).'원</p>
+                </div>';
+            ?>
+        </table>
+        <input type="submit" value = "삭제">
+      </div>
+    </form>
+
+    <h3>Each Members</h3>
+    <div class = "each_member-pay">
+      <?php
+        //직원 리스트 받기
+        $query = "select real_name from members where work_place = ?";
+        $list_name = $db -> query($query, $my_place)-> fetchAll();
+        
+
+        for ($i=0; $i<count($list_name); $i++){
+          //각 직원별 인건비 합계
+          $query = "select pay from member_time where permit = '승인' and real_name = ?";
+          $list_pay = $db -> query($query, $list_name[$i]["real_name"])-> fetchAll();
+        
+          $pay_member = 0;
+          for ($j=0; $j<count($list_pay); $j++){
+            $pay_member += $list_pay[$j]["pay"];
           }
+
+          echo '<p>'.$list_name[$i]["real_name"].': '.number_format($pay_member).' 원</p>';
         }
-      echo '<div class = "proc_area_m__inform">
-            <p class = "proc_area_m__inform-log">인건비 총합: '.$pay_total.'</p>
-            </div>';
         ?>
-    </table>
     </div>
   </div>
 

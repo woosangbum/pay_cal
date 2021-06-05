@@ -15,7 +15,7 @@
     src="https://kit.fontawesome.com/faa41a920e.js"
     crossorigin="anonymous"
   ></script>
-  </head>
+</head>
 <body>
   <?php
     include "library/nav_out.php";

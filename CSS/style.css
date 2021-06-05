@@ -8,6 +8,9 @@
 @import "screens/join_manager.css";
 @import "screens/realpage.css";
 @import "screens/realpage-m.css";
+@import "screens/modify-m.css";
+@import "screens/modify.css";
+@import "screens/members.css";
 
 /* component */
 @import "component/navbar.css";

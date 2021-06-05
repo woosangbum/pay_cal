@@ -1,7 +1,6 @@
 <?php
     session_start();
     include "library/dbClass.php";   
-    include "library/lib.php";
 
     if(!isset($_SESSION["isLogin"])){
         echo "로그인 후 이용해주세요.";

@@ -1,0 +1,58 @@
+.contents-members__area__welcome__manager a {
+  color: black;
+}
+.contents-members__logo {
+  color: var(--sub-color);
+  font-size: 50px;
+  padding: 10px;
+  margin: 40px 0px 20px 0px;
+}
+
+.contents-members__area__welcome h1,
+.contents-members__area__welcome p {
+  text-align: center;
+  margin: 20px 10px 0px 10px;
+}
+
+.contents-members {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contents-members__area {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--sub-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 30%;
+  height: 550px;
+}
+
+.contents-members__area__welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 640px) {
+  .contents-members__area {
+    width: 80%;
+  }
+}
+
+.contents-members__area__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.contents-members__area__form table {
+  margin: 20px 20px;
+}
+.sub-btn {
+  width: 30%;
+}

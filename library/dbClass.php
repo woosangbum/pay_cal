@@ -1,4 +1,11 @@
 <?php
+	error_reporting(1);
+    ini_set("display_errors",1);
+
+	if(mysqli_connect_error()){
+        echo "conneting mysql, Error";
+        echo mysqli_connect_error();
+    }
 
 	class db {
 
@@ -100,6 +107,7 @@
 
 		public function close() {
 			return $this->connection->close();
+			echo "sdadsadasdsadasas";
 		}
 
 		public function numRows() {
@@ -129,14 +137,10 @@
 		}
 
 	}
+	$dbhost = 'localhost';
+	$dbuser = 'root';
+	$dbpass = '';
+	$dbname = 'payment_members';
 
-
-
-	
-		$dbhost = 'localhost';
-		$dbuser = 'root';
-		$dbpass = '';
-		$dbname = 'payment_members';
-
-		$db = new db($dbhost, $dbuser, $dbpass, $dbname); 
+	$db = new db($dbhost, $dbuser, $dbpass, $dbname); 
 ?>

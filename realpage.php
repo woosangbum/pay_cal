@@ -19,7 +19,6 @@
 <body>   
   <?php
     session_start();
-    include "library/lib.php";
     include "library/dbClass.php";
     $isLogin = $_SESSION["isLogin"];
     $isLoginManagers = $_SESSION["isLoginManagers"];
@@ -74,40 +73,47 @@
         <input id="request" type="submit" value = "임금 요청 하기">
     </form>
 
-    <table>
-      <tr>
-        <td>날짜</td>
-        <td>시간</td>
-        <td>요청 시간</td>
-        <td>승인여부</td>
-        <td>임금</td>
-      </tr>
-      <?php
-        $query = "select * from member_time where uid = ?";
-        $list = $db -> query($query, $isLogin)-> fetchAll();
-        $total = 0;
-        $pay_total = 0;
-        foreach($list as $data){
-            $total += $data['pay'];
-            if ($data['permit'] == '승인'){
-                $pay_total += $data['pay'];
-            }
-      ?>
-      <tr>
-          <td> <?=$data['date']?></td>
-          <td> <?=$data['time']?></td>
-          <td> <?=$data['regdate']?></td>
-          <td> <?=$data['permit']?></td>
-          <td> <?=$data['pay']?></td>
-      
-      <?php
-        }
-        echo '<div class = "proc_area__inform">
-        <p class = "proc_area__inform-request">요청한 임금: '.$total.'</p>
-        <p class = "proc_area__inform-permit">승인된 임금: '.$pay_total.'</p>
-        </div>';
-      ?>
-    </table>
+    <form action="timeDeleteProc.php" method = "post">
+      <table>
+        <tr>
+          <td>날짜</td>
+          <td>시간</td>
+          <td>요청 시간</td>
+          <td>승인여부</td>
+          <td>임금</td>
+          <td>삭제</td>
+        </tr>
+        <?php
+          $query = "select * from member_time where uid = ?";
+          $list = $db -> query($query, $isLogin)-> fetchAll();
+          $total = 0;
+          $pay_total = 0;
+          foreach($list as $data){
+              $total += $data['pay'];
+              if ($data['permit'] == '승인'){
+                  $pay_total += $data['pay'];
+              }
+        ?>
+        <tr>
+            <td> <?=$data['date']?></td>
+            <td> <?=$data['time']?></td>
+            <td> <?=$data['regdate']?></td>
+            <td> <?=$data['permit']?></td>
+            <td> <?=$data['pay']?></td>
+            <td> 
+              <input type="checkbox" name = "delete[]" value = "<?=$data['idx']?>">
+            </td>
+        
+        <?php
+          }
+          echo '<div class = "proc_area__inform">
+          <p class = "proc_area__inform-request">요청한 임금: '.$total.'</p>
+          <p class = "proc_area__inform-permit">승인된 임금: '.$pay_total.'</p>
+          </div>';
+        ?>
+      </table>
+      <input type="submit" value = "삭제">
+    </form>
   </div>
 
   <?php include "library/footer.php"; ?>

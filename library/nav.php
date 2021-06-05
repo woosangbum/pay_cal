@@ -17,6 +17,7 @@
   </ul>
 
   <ul class="navbar__members">
+    <li><a href="modify.php">My Info</a></li>
     <li><a href="logout.php">Logout</a></li>
   </ul>
     
@@ -26,11 +27,13 @@
   ?>
   <ul class="navbar__linkList">
     <li><a href="index.php">Home</a></li>
-    <li><a href="realpage_managers.php">My Pages</a></li>
+    <li><a href="realpage_managers.php">Labor Costs</a></li>
+    <li><a href="members_manager.php">My Members</a></li>
     <li><a href="#">FAQ</a></li>
   </ul>
 
   <ul class="navbar__members">
+    <li><a href="modify_manager.php">My Info</a></li>
     <li><a href="logout.php">Logout</a></li>
   </ul>
       

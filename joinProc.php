@@ -1,6 +1,5 @@
 <?php
     include "library/dbClass.php";
-    include "library/lib.php";
 
     $data = array($_POST['real_name'], $_POST['uid'], $_POST['pwd'],
                     $_POST['phone_number'], $_POST['bank_account'],

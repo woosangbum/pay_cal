@@ -10,7 +10,7 @@
     </li>
     <li>
     <i class="far fa-envelope-open"></i>
-      woosb24@gmial.com
+      woosb24@gmail.com
     </li>
   </ul>
 </footer>

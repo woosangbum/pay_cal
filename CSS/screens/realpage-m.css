@@ -46,3 +46,11 @@
   padding: 8px 10px;
   margin: 0;
 }
+
+.each_member-pay {
+  display: flex;
+}
+.each_member-pay p {
+  margin: 0px;
+  padding: 10px;
+}
